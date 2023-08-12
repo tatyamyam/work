@@ -8,7 +8,10 @@ public class Car_Chapter14 {
 	
 	//①車クラスは次のメソッドを持つ
 	public void gearChange(int afterGear) {
-		this.gear = afterGear;
+		
+		System.out.println("ギア" + gear + "から" + afterGear + "に切り替えました");
+		
+		//this.gear = afterGear;
 		
 	}
 	
