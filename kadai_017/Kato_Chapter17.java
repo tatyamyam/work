@@ -1,6 +1,6 @@
 package kadai_017;
 
-abstract public class Kato_Chapter17 {
+abstract class Kato_Chapter17 {
 	
 	//親クラス
 	
@@ -8,6 +8,11 @@ abstract public class Kato_Chapter17 {
 	public String familyName;	//姓
 	public String givenName;	//名
 	public String address;		//住所
+	
+	public Kato_Chapter17(String familyName, String address) {
+        this.familyName = familyName;
+        this.address = address;
+    }
 	
 	
 	public void commonIntroduce() {
