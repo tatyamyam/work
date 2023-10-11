@@ -35,15 +35,3 @@ public class Weight {
     private Timestamp updatedAt;
 
 }
-
-
-
-
-//CREATE TABLE IF NOT EXISTS weight (
-//	     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-//	     health_id INT NOT NULL,
-//	     FOREIGN KEY(health_id) REFERENCES health(id),
-//	     weight INT NOT NULL,
-//	     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-//	     updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP     
-//	);

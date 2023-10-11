@@ -31,6 +31,12 @@ public class Account {
 
     @Column(name = "updated_at", insertable = false, updatable = false)
     private Timestamp updatedAt;
+
+    
+    //UserDetailsImpl.javaでユーザが有効であればtrue	を返す処理をいれるためこちらで宣言が必要
+	public boolean getEnabled() {
+		return false;
+	}
 	
 
 }
