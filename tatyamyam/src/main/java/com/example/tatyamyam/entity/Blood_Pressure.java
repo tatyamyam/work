@@ -7,9 +7,9 @@ import jakarta.persistence.*;
 
 
 @Entity
-@Table(name="weight")
+@Table(name="blood_pressure")
 @Data
-public class Weight {
+public class Blood_Pressure {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -17,10 +17,16 @@ public class Weight {
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "health_id")
-	private Health health;
+	private Blood_Pressure blood_Pressure;
 	
-	@Column(name = "weight")
-	private int weight;
+	@Column(name = "s_bp")
+	private int s_Bp;
+	
+	@Column(name = "d_bp")
+	private int d_Bp;
+	
+	@Column(name = "plus")
+	private int plus;
 	
 	@Column(name = "created_at", insertable = false, updatable = false)
     private Timestamp createdAt;

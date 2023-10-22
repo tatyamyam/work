@@ -11,6 +11,9 @@ import java.sql.Timestamp;
 import jakarta.persistence.Column;
 import lombok.Data;
 
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
 @Entity
 @Table(name="account")
 @Data
@@ -27,10 +30,13 @@ public class Account {
 	private String password;
 	
 	@Column(name = "created_at", insertable = false, updatable = false)
-    private Timestamp createdAt;
-
-    @Column(name = "updated_at", insertable = false, updatable = false)
-    private Timestamp updatedAt;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Timestamp createdAt;
+	
+	@Column(name = "updated_at", insertable = false, updatable = false)
+	@Temporal(TemporalType.TIMESTAMP)
+	private Timestamp updatedAt;
+	
 
     
     //UserDetailsImpl.javaでユーザが有効であればtrue	を返す処理をいれるためこちらで宣言が必要
