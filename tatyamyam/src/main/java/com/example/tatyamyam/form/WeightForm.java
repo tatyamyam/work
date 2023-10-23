@@ -4,7 +4,7 @@ public class WeightForm {
 	
 	private int weight;
 	
-	public long getWeight() {
+	public int getWeight() {
 		return weight;
 	}
 	
