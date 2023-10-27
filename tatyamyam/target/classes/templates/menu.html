@@ -1,21 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Menu</title>
 </head>
 <body>
-    <h2>Menu</h2>
-<!--    <form th:action="@{/login}" method="post">
-        <div>
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" />
-        </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" />
-        </div>
-        <button type="submit">Login</button>
-    </form>-->
+    <h1>Welcome to the Menu Page</h1>
+    <p>This is the menu page content. You can put any menu options or content here.</p>
+    
+    <!-- Add your menu items or content here -->
+
+    <a th:href="@{/logout}">Logout</a> <!-- ログアウトへのリンク -->
 </body>
 </html>
