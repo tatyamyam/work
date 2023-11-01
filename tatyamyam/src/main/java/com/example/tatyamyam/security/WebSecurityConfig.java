@@ -26,6 +26,8 @@ public class WebSecurityConfig {
                 .loginProcessingUrl("/login")     // ログインフォームの送信先URL
                 .defaultSuccessUrl("/menu")  // ログイン成功時のリダイレクト先URL
                 .failureUrl("/login?error")       // ログイン失敗時のリダイレクト先URL
+                .usernameParameter("email")
+                .passwordParameter("password")
                 .permitAll()
             )
             .logout((logout) -> logout

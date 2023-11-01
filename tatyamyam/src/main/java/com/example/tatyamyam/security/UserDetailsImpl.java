@@ -53,14 +53,14 @@ public class UserDetailsImpl implements UserDetails {
  // ユーザーが有効であればtrueを返す
     @Override
     public boolean isEnabled() {
-        return account.getEnabled();
+        return true;
     }
 
     //
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO 自動生成されたメソッド・スタブ
-		return false;
+		return true;
 	}	
 
 }

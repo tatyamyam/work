@@ -41,6 +41,7 @@ public class AccountService {
 	//パスワードとパスワード(確認用)の入力値が一致しているか判定する
 	public boolean isSamePassword(String password, String passwordConfirmation) {
 		return password.equals(passwordConfirmation);
+	
 	}
 	
 }

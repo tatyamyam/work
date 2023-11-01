@@ -26,6 +26,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		try {
 			Account account = accountRepository.findByEmail(email);
 			String userRoleName = account.getEmail();
+			System.out.println("OK");
 			Collection<GrantedAuthority> authorities = new ArrayList<>();         
             authorities.add(new SimpleGrantedAuthority(userRoleName));
             return new UserDetailsImpl(account, authorities);
