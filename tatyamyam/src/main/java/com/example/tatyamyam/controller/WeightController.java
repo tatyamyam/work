@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.tatyamyam.entity.Account;
 import com.example.tatyamyam.entity.Health;
 import com.example.tatyamyam.entity.Weight;
 import com.example.tatyamyam.form.WeightForm;
@@ -37,10 +38,10 @@ public class WeightController {
 	
 	 @PostMapping("/regist_weight")
 	    public String submit_Weight(WeightForm weightForm, @AuthenticationPrincipal UserDetailsImpl userDetailsImpl) {
-		 Long userID = userDetailsImpl.getUserId();
-		 
+		 Account account = userDetailsImpl.getAccount();
+		 System.out.println(account + "weightController");
 		// 今日のhealthカラムが存在するか確認し、なければ作成
-		 Health health = healthService.getOrCreateTodayHealth(userID);
+		 Health health = healthService.getOrCreateTodayHealth(account);
 		 
 		// weightを追加し、作成したhealthのidをhealth_idにセット
 	        //weightForm.setHealth(health);

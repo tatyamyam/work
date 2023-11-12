@@ -1,7 +1,6 @@
 package com.example.tatyamyam.entity;
 
 import java.sql.Timestamp;
-import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,25 +19,7 @@ import lombok.Data;
 @Table(name="health")
 @Data
 public class Health {
-	@Column(name = "user_id", insertable = false, updatable = false)
-	private Long userId;
-    private LocalDate date;
-    
-    public Long getUserId() {
-        return userId;
-    }
-    
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public LocalDate getDate() {
-        return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
+	
     
 	public enum HealthStatus {
 	    HEALTHY, UNHEALTHY, UNKNOWN; // 例として
@@ -53,7 +34,7 @@ public class Health {
 	@JoinColumn(name = "user_id")
 	private Account account;
 	
-	@Column(name = "created_at", insertable = false, updatable = false)
+	@Column(name = "created_at", insertable = true, updatable = false)
     private Timestamp createdAt;
 
     @Column(name = "updated_at", insertable = false, updatable = false)
