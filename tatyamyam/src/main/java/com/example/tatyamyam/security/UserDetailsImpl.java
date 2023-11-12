@@ -1,6 +1,7 @@
 package com.example.tatyamyam.security;
 
 import java.util.Collection;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -31,6 +32,12 @@ public class UserDetailsImpl implements UserDetails {
     public String getUsername() {
         return account.getEmail();
     }
+	
+
+    public long getUserId() {
+        return account.getId();
+    }
+	
 	
 	// ロールのコレクションを返す
     @Override
