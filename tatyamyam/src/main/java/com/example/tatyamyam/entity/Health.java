@@ -20,7 +20,7 @@ import lombok.Data;
 @Table(name="health")
 @Data
 public class Health {
-	
+	@Column(name = "user_id", insertable = false, updatable = false)
 	private Long userId;
     private LocalDate date;
     
