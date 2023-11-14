@@ -22,7 +22,7 @@ public class HealthService {
         System.out.println(today);
         // ユーザーIDと日付でhealthを検索
         Long userId = account.getId();
-        Health health = healthRepository.findByUserIdAndCreatedAt(userId, today);
+        Health health = healthRepository.findByAccountAndCreatedAt(account, today);
 
         // healthが存在しない場合は新規作成
         if (health == null) {
