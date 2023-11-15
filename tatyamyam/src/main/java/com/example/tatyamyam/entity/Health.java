@@ -1,6 +1,7 @@
 package com.example.tatyamyam.entity;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -50,7 +51,9 @@ public class Health {
     private HealthStatus status;
     
     
-    
+    public Health() {
+        this.createdAt = Timestamp.valueOf(LocalDateTime.now());
+    }
     
 	
 
