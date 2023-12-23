@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.tatyamyam.entity.Account;
 import com.example.tatyamyam.entity.Health;
-import com.example.tatyamyam.entity.Weight;
 import com.example.tatyamyam.form.WeightForm;
 import com.example.tatyamyam.security.UserDetailsImpl;
 import com.example.tatyamyam.service.HealthService;
@@ -37,34 +36,13 @@ public class WeightController {
     }
 	
 	 @PostMapping("/regist_weight")
-	    public String submit_Weight(WeightForm weightForm, @AuthenticationPrincipal UserDetailsImpl userDetailsImpl) {
+	    public String submit_Weight(WeightForm weightForm, @AuthenticationPrincipal UserDetailsImpl userDetailsImpl) { 
 		 Account account = userDetailsImpl.getAccount();
-		 System.out.println(account + "weightController");
 		// 今日のhealthカラムが存在するか確認し、なければ作成
 		 Health health = healthService.getOrCreateTodayHealth(account);
-		 
-		// weightを追加し、作成したhealthのidをhealth_idにセット
-	        //weightForm.setHealth(health);
-	        //weightService.addWeight(weightForm);
-	        
-	     // WeightFormからWeightに変換
-	        Weight weight = weightForm.toWeight();
 
-	        // 作成したhealthの参照を設定
-	        weight.setHealth(health);
-
-	        // Weightを追加
-	        weightService.addWeight(weight);
-	        
-		 
-		 
-	        //System.out.println(weightForm.getWeight());
-	        // ここにデータベースへの保存ロジックを追加
-	        
-	        
-	        
-	         
-	        // 一覧情報の取得、画面への情報設定、一覧画面への遷移の処理も追加すること
+		 //Weight.Serive内で体重をDBへ保存する
+		 	weightService.saveWeight(weightForm, health);
 
 	        return "regist_weight";
 	    }

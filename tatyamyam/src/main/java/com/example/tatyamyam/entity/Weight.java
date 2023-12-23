@@ -19,7 +19,6 @@ import lombok.Data;
 @Data
 public class Weight {
 	
-    private double value;
     
     
 	@Id
@@ -56,12 +55,9 @@ public class Weight {
         this.health = health;
     }
 
-    public double getValue() {
-        return value;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public void setValue(double value) {
-        this.value = value;
-    }
 
 }
