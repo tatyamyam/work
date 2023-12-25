@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>血圧記録</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Form</h1>
+    <form th:action="@{/regist_bloodpressure}" method="post">
+	  <p>最高血圧<input type="number" name="s_bp" required></p>
+	  <p>最低血圧<input type="number" name="d_bp" required></p>
+	  <p>脈拍<input type="number" name="puls" required></p>
+      <p><input type="submit" value="Submit" /></p>
+    </form>
+</body>
+</html>
