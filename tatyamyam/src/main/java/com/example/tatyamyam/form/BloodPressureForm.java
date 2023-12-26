@@ -19,14 +19,17 @@ public class BloodPressureForm {
 	
 	public void setS_Bp(int s_Bp) {
 		this.s_Bp = s_Bp;
+		System.out.println(s_Bp);
 	}
 	
 	public void setD_Bp(int d_Bp) {
 		this.d_Bp = d_Bp;
+		System.out.println(d_Bp);
 	}
 	
 	public void setPuls(int puls) {
 		this.puls = puls;
+		System.out.println(puls);
 	}
 	
 
