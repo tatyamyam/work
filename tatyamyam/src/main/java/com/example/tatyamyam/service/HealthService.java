@@ -37,4 +37,11 @@ public class HealthService {
 
         return health;
     }
+
+    //全てのhealthを返すメソッドを作成
+    public Health[] getHealth(Account account) {
+    	Health[] healths = healthRepository.findByAccount(account);
+        return healths;
+        
+    }
 }

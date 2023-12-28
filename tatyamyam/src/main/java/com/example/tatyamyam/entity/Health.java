@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -55,6 +56,11 @@ public class Health {
         this.createdAt = Timestamp.valueOf(LocalDateTime.now());
     }
     
-	
+    //HealthのEntityにweightを紐づけする
+    @OneToOne(mappedBy = "health", fetch = FetchType.LAZY)
+    private Weight weight;
 
+ @OneToOne(mappedBy = "health", fetch = FetchType.LAZY)
+  private Blood_Pressure blood_pressure;
+ 
 }

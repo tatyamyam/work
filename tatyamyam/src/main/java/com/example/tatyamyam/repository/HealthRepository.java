@@ -11,4 +11,8 @@ public interface HealthRepository extends JpaRepository<Health, Long> {
 
 	Health findByAccountAndCreatedAt(Account account, Timestamp createdAt);
 
+	
+	//アカウントに紐づくHealthをすべて返すメソッドを追加
+	Health[] findByAccount(Account account);
+
 }
