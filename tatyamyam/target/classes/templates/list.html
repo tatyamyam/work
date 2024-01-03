@@ -15,19 +15,21 @@
 
 <h2>Your Health Records</h2>
 
-<!--<table>-->
-<!--    <thead>-->
-<!--        <tr>-->
-<!--            <th>Weight</th>-->
-<!--            <th>Blood Pressure</th>-->
-<!--        </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--        <tr th:each="health : ${healths}">-->
-<!--            <td th:text="${health.weight.value}"></td>-->
+<table>
+    <thead>
+        <tr>
+            <th>Weight</th>
+            <th>Blood Pressure</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="health : ${healths}">
+			<div th:if="${ health.getWeight() != null}">
+            <td th:text="${health.getWeight().getWeight()}"></td>
 <!--            <td th:text="${health.blood_pressure.value}"></td>-->
-<!--        </tr>-->
-<!--    </tbody>-->
-<!--</table>-->
+			</div>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>
